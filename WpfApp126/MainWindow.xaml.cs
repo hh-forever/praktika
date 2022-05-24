@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace WpfApp126
 {
@@ -20,9 +21,12 @@ namespace WpfApp126
     /// </summary>
     public partial class MainWindow : Window
     {
+        DB.Model1 model = new DB.Model1();
         public MainWindow()
         {
             InitializeComponent();
+            model.Client.Load();
+            LVclient.ItemsSource = model.Client.Local;
         }
     }
 }

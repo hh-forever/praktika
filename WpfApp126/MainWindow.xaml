@@ -7,6 +7,26 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListView x:Name="LVclient">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Имя" FontWeight="Medium" FontSize="20"/>
+                            <Label Content="{Binding FirstName}" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Фамилия" FontWeight="Medium" FontSize="20"/>
+                            <Label Content="{Binding LastName}" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Email" FontWeight="Medium" FontSize="20"/>
+                            <Label Content="{Binding Email}" FontSize="18"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </Window>
